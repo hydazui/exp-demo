@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<!-- 必须的 meta 标签 -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Bootstrap 的 CSS 文件 -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+		<title>计算</title>
+		<script type="text/javascript">
+			function calculate() {
+				// Exp(-31.95+2.42*ACD-1.15*STS+2.91*Size)
+				acd = document.getElementById("acd").value
+				sts = document.getElementById("sts").value
+				size = document.getElementById("size").value
+				result = Math.exp(-31.95+2.42*acd-1.15*sts+2.91*size)
+				document.getElementById("result").value = result
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div>公式：Exp(-31.95+2.42*ACD-1.15*STS+2.91*Size)</div>
+			<form>
+				<div class="mb-3">
+					<label for="acd" class="form-label">ACD</label>
+					<input type="text" class="form-control" id="acd">
+				</div>
+				<div class="mb-3">
+					<label for="sts" class="form-label">STS</label>
+					<input type="text" class="form-control" id="sts">
+				</div>
+				<div class="mb-3">
+					<label for="size" class="form-label">Size</label>
+					<input type="text" class="form-control" id="size">
+				</div>
+				<div class="mb-3">
+					<label for="result" class="form-label">Result</label>
+					<input type="text" class="form-control" id="result" readonly>
+				</div>
+				<button type="button" class="btn btn-primary" onclick="calculate()">计算</button>
+			</form>
+		</div>
+		<!-- JavaScript 文件是可选的。从以下两种建议中选择一个即可！ -->
+		<!-- 选项 1：包含 Popper 的 Bootstrap 集成包 -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+	</body>
+</html>
